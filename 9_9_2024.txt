@@ -26,3 +26,57 @@ vào mục views/product để tạo thêm các file cart.php và checkout.php
 tạo thêm ProductController, file ProductController có 2 hàm index(chỉnh thành $this->view('','/product/cart'); và checkout this->view('','/product/checkout')
  kiểm tra bằng cách gõ http://localhost/9_9_2024/index.php?con=ProductController&act=testimonial
 cuối cùng là chỉnh lại anchor link trong views/partials/header
+
+-------------TAO DATABASE
+mở laragon, bấm vào nút databse
+username nhập root, ko cần nhập mk
+bên trái có chữ new, bấm vào sẽ hiện ra creat database gõ tên databse là shoptmdt  và chọn utf8 mt4  general ci 
+ta sẽ tạo các bảng như sau: sản phẩm chung (thông tin chung của iphone 16) ) và sản phẩm riêng (thông tin riêng của iphone 16 bản 512)
+ người dùng, đơn hàng, bình luận, giỏ hàng, danh mục sản phẩm (category), cáu hình (các option cho 1 chiếc điện thoại)
+
+table name ta nhap menu, column chưa biết nên để 4 
+id int length = 15 primary a_i tick vào (tự động tăng)
+name varchar length = 70
+slug varchar length = 70 NULL(slug là tên viết tắt của name: vd: điện thoại di động có slug là dtdd, ko viết hoa, ko khoảng cách, ko kí tự đặc biệt do sẽ đưa slug lên url)
+idparent int length = 15 NULL (ta có menu cha, rồi menu con, nếu bắt buộc tạo 1 bảng thì quy định, nếu  id có idparent là null thì là menu cha, nếu có idparent ! = null thì đây là menu con)
+link varchar length = 355 NULL
+display boolean NULL( có cho slug hiện lên trên url hay không)
+rank int NULL (để khi mình muốn id này được đẩy lên trên đầu)
+type int NULL
+rồi bấm save
+
+vào dự án, tìm file app / core / model phần __construct(){
+đổi tên dbname thành shoptmdt
+}
+vào dự án, app / model tạo file Menu.php
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

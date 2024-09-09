@@ -4,7 +4,7 @@
 
         public function __construct(){
             //khoi tao ket noi voi csdl
-            $this->db = new PDO('mysql:host=localhost;dbname=yourdb,charset=utf-8','root','');
+            $this->db = new PDO('mysql:host=localhost;dbname=shoptmdt,charset=utf-8','root','');
             $this->db->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
         }
         //method truy van truy van phuc tap select  non select
