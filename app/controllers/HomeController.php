@@ -22,14 +22,6 @@
         public function contact(){
             $this->view('','/home/contact');
         }
-        
-        public function cart(){
-            $this->view('','/product/index');
-        }
-
-        public function checkout(){
-            $this->view('','/product/checkout');
-        }
 
     }
 ?>

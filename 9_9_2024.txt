@@ -9,8 +9,7 @@ sau đó ta gõ <?php require_once($viewPath);?>  (nhét component tùy biến v
 và tại vị trí đã từng có footer, ta gõ <?php require_once(BASE_PATH. '/app/views/partials/header.php');?> (nhét footer vào)
 
 b5: các trang shop, shop detail, testimonial, 404 page, contact để vào mục views/home
- cart, checkout để vào mục views/product (chỉnh thành $this->view('','/product/cart');
-
+ 
 làm mẫu 1 trang testimonial
 1/ vào homeController gõ thêm hàm 
  public function testimonial(){
@@ -22,5 +21,8 @@ làm mẫu 1 trang testimonial
 
 3. kiểm tra bằng cách gõ http://localhost/9_9_2024/index.php?con=HomeController&act=testimonial
 
-
+b6: đổi với các trang cart, checkout 
+vào mục views/product để tạo thêm các file cart.php và checkout.php
+tạo thêm ProductController, file ProductController có 2 hàm index(chỉnh thành $this->view('','/product/cart'); và checkout this->view('','/product/checkout')
+ kiểm tra bằng cách gõ http://localhost/9_9_2024/index.php?con=ProductController&act=testimonial
 cuối cùng là chỉnh lại anchor link trong views/partials/header
