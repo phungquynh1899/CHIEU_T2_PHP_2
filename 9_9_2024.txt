@@ -1,0 +1,26 @@
+mở laragon, mở trình duyệt gõ localhost, chọn 9_9_2024 
+b1: trong layouts mở file index.php rồi vào fruit project, copy toàn bộ html từ file index.html vào index.php, thêm /public vào tất cả các link
+b2: trong views. tạo thư mục partials, tạo file header.php, cắt file index.php vừa làm ở phía trên sang file header.php (từ phần spinner start đến trước hero start) 
+b3: trong views / partials, tạo file footer.php, cắt file index.php vừa làm ở phía trên sang file footer.php (từ phần footer start đến trước copy end)
+trong views/home mở file index.php, cắt toàn bộ từ hero start đến testimonials vào
+b4: trong file index.php ở trên, , 
+dưới <body>, tại vị trí từng có header , ta gõ <?php require_once(BASE_PATH. '/app/views/partials/header.php');?>  (nhét header vào)
+sau đó ta gõ <?php require_once($viewPath);?>  (nhét component tùy biến vào - ở đây tạm thời là body của index cũ)
+và tại vị trí đã từng có footer, ta gõ <?php require_once(BASE_PATH. '/app/views/partials/header.php');?> (nhét footer vào)
+
+b5: các trang shop, shop detail, testimonial, 404 page, contact để vào mục views/home
+ cart, checkout để vào mục views/product (chỉnh thành $this->view('','/product/cart');
+
+làm mẫu 1 trang testimonial
+1/ vào homeController gõ thêm hàm 
+ public function testimonial(){
+            //goi view cua controller (cha)
+            $this->view('','/home/testimonial');
+        }
+2. trong views/home tạo file testimoial.php, ta mở fruit project, file testimonial.html, cắt phần nội dung liên quan đến testimonial vào (bỏ header, footer, chỉ lấy khúc chính giữa) và thêm public/ vào trước tất cả các link
+
+
+3. kiểm tra bằng cách gõ http://localhost/9_9_2024/index.php?con=HomeController&act=testimonial
+
+
+cuối cùng là chỉnh lại anchor link trong views/partials/header
