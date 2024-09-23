@@ -4,8 +4,12 @@
 
         public function __construct(){
             //khoi tao ket noi voi csdl
-            $this->db = new PDO('mysql:host=localhost;dbname=shoptmdt,charset=utf-8','root','');
+            //nhớ chỉnh lại tên databse cho phù hợp với database của mình
+            //ghi đúng thứ tự
+            $this->db = new PDO('mysql:host=localhost;dbname=csdl','root','');
             $this->db->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
+            $this->db -> exec("set names utf8mb4");
+           
         }
         //method truy van truy van phuc tap select  non select
         public function query($sql, $params = []){

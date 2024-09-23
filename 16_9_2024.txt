@@ -1,0 +1,14 @@
+thầy cho file laravel.sql,tải về
+mở laragon, chọn databse, tạo 1 csdl mới (tên csdl), bấm vào tab import, import file laravel.sql vào, ok là xong
+
+ta sẽ làm việc với 2 file chính là core/Model.php (CHA) và Menu.php (CON)
+vào lại file Models/Menu.php gõ 
+
+vào file Model.php chỉnh lại tên database thành csdl và chỉnh lại hàm __construct() như sau 
+ //nhớ chỉnh lại tên databse cho phù hợp với database của mình
+            $this->db = new PDO('mysql:host=localhost;dbname=csdl','root','');
+            $this->db = exec("set names utf8mb4");
+
+            đổi anhien trong csdl, menus thành tinyint(1)
+
+nội dung chính là lấy dữ liệu từ bảng menus ra, gán vào thanh navbar
